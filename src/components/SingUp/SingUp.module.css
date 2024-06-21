@@ -1,0 +1,83 @@
+.sing_up_form{
+    height: 600px;
+    /*background-color: red;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sing_up_form a{
+    text-decoration: none;
+    color: #2457F088;
+}
+
+.form_title{
+    font-size: 48px;
+    color: #2457F0;
+    margin-bottom: 30px;
+}
+
+.sing_up_form_inputs,.sing_up_form_inputs_incorrect, .sing_up_form_button{
+    width: 380px;
+    height: 60px;
+    border-radius: 35px;
+    border: 2px solid #2457F088;
+    text-align: center;
+    outline:none;
+    transition: 0.2s ease-in-out;
+    margin-bottom: 15px;
+    font: 400 20px "Unbounded", sans-serif;
+
+}
+
+.sing_up_form_inputs, .sing_up_form_inputs_incorrect, .sing_up_form_button:focus{
+    border: 2px solid #2457F0bb;
+}
+
+.sing_up_form_inputs::placeholder{
+    font: 400 20px "Unbounded", sans-serif;
+    line-height: 60px;
+    color: #2457F07C;
+}
+
+.sing_up_form_inputs_incorrect{
+    border: 2px solid #F02424 ;
+    font: 400 16px "Unbounded", sans-serif;
+}
+.sing_up_form_inputs_incorrect::placeholder{
+    color: #F0242488;
+}
+
+.sing_up_form_button{
+    color: #2457F0;
+    border: 2px solid #2457F0;
+    background: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.sing_up_form_button:hover{
+    background-color: #2457F0;
+    color: white;
+}
+
+.sing_up_form_checkbox, .sing_up_form_checkbox_incorrect{
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.sing_up_form_checkbox{
+    color: #2457F088 ;
+}
+.sing_up_form_checkbox_incorrect{
+    color: #F0242499;
+}
+
+.sing_up_form_radio_input{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}

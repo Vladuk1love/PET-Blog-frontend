@@ -1,0 +1,85 @@
+.main_advantages_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    border-radius: 100px 100px 0 0;
+    background-color: white;
+    height: 550px;
+    animation: explanation_container linear;
+    animation-timeline: view();
+    animation-range: entry 0 ;
+}
+
+.advantages_pluses{
+    display: flex;
+    gap: 35px;
+    margin-bottom: 80px;
+}
+
+.plusses_block{
+    width: 230px;
+    height: 270px;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    padding-left: 35px;
+    animation: explanation linear;
+    animation-timeline: view();
+    animation-range: entry 0 ;
+}
+
+.plusses_block p{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.plusses_block p:first-child{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.plusses_block p:last-child{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.advantages_tags{
+    display: flex;
+    gap: 20px;
+    color: #2457F0;
+    font-weight: 500 ;
+    width: 1000px;
+    height: 300px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: explanation linear;
+    animation-timeline: view();
+    animation-range: entry 0 ;
+}
+
+.advantages_tags p{
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+}
+
+@keyframes explanation_container {
+    from{
+        scale: 0.95;
+        opacity: 0.8;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+@keyframes explanation {
+    from{
+        scale: 0.6;
+        opacity: 0.7;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}

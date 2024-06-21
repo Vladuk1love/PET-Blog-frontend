@@ -1,0 +1,58 @@
+.home_page_footer_container{
+    height: 150px;
+    background-color: #2457F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 70px;
+    padding-left: 70px;
+    animation: explanation_container linear;
+    animation-timeline: view();
+    animation-range: entry 0 ;
+}
+
+.home_page_footer_logo{
+    font-size: 23px;
+    color: white;
+}
+
+
+.footer_singin_button {
+    font: 400 20px "Unbounded", sans-serif;
+    color: white;
+    background: none;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.footer_singup_button {
+    font: 400 20px "Unbounded", sans-serif;
+    color: white;
+    background: none;
+    border: none;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.footer_contacts a{
+    font-size: 15px;
+    font-weight: 200;
+    color: white;
+    line-height: 10px;
+    text-decoration: none;
+}
+
+@keyframes explanation_container {
+    from{
+        scale: 0.8;
+        opacity: 0.8;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}

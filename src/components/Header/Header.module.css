@@ -1,0 +1,40 @@
+.header_without_logo {
+    display: flex;
+    width: 100%;
+    gap: 25px;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    background-color: #2457F0;
+    position: relative;
+}
+
+.header_without_logo_logo {
+    position: absolute;
+    left: 40px;
+    font-size: 17px;
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+}
+
+.header_singin_button {
+    font: 400 20px "Unbounded", sans-serif;
+    color: white;
+    background: none;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.header_singup_button {
+    font: 400 20px "Unbounded", sans-serif;
+    color: white;
+    background: none;
+    border: none;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+}
