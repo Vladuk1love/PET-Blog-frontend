@@ -3,6 +3,7 @@ import styles from './HomePage.module.css'
 import MainAdvantages from "./components/MainAdvantages/MainAdvantages";
 import PopularPosts from "./components/PopularPosts/PopularPosts";
 import HomePageFooter from "./components/HomePageFooter/HomePageFooter";
+import { Navigate } from "react-router-dom";
 
 
 const SLOGANS = [
@@ -33,6 +34,9 @@ function HomePage() {
     }, 7000)
   }, [currSlogan])
 
+  if (localStorage.getItem('token')){
+    return <Navigate to={'/posts'}/>
+  }
 
   return (
     <div className={styles.home_page_container}>

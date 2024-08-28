@@ -3,6 +3,7 @@ export interface IUser{
   email: string,
   password: string,
   avatarUrl: string,
+  _id: string
   token: string
 }
 
@@ -18,4 +19,9 @@ export interface IPosts {
   viewsCount: number,
   user: IUser,
   imageUrl: string,
+}
+
+export interface IAuthorsPosts{
+  authorId: string,
+  page: number
 }

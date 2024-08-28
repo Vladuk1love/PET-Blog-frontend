@@ -1,0 +1,24 @@
+.tags_navigation_container {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #EAEAEA;
+    align-items: center;
+    gap: 40px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+
+.tags_navigation_container:first-child {
+    padding-left: 40px;
+}
+
+.tags_navigation_container::-webkit-scrollbar {
+    display: none;
+}
+

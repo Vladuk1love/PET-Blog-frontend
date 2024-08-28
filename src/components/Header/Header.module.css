@@ -1,4 +1,4 @@
-.header_without_logo {
+.header_before_auth {
     display: flex;
     width: 100%;
     gap: 25px;
@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.header_without_logo_logo {
+.header_before_auth_logo {
     position: absolute;
     left: 40px;
     font-size: 17px;
@@ -37,4 +37,46 @@
     width: 200px;
     height: 40px;
     cursor: pointer;
+}
+
+
+
+.header_after_auth {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    height: 100px;
+    align-items: center;
+    background-color: #2457F0;
+    position: relative;
+}
+
+.header_after_auth_main{
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.header_auth_buttons {
+    font: 300 19px "Unbounded", sans-serif;
+    color: white;
+    background: none;
+    border-radius: 35px;
+    border: 1px solid white;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header_auth_buttons:first-child, .header_auth_buttons:last-child {
+    border: none
 }

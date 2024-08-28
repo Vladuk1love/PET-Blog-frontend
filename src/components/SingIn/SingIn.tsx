@@ -1,8 +1,9 @@
 import { useFormik } from "formik";
 import styles from './SingIn.module.css'
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useAuthUserMutation } from "../../redux/user/userApi";
 import Loading from "../Loading/Loading";
+import { useActions } from "../../hooks/useActions";
 
 
 interface IErrors {
@@ -10,28 +11,28 @@ interface IErrors {
   password: string
 }
 
+
 function SingIn() {
-  const [login, {isLoading, error}] = useAuthUserMutation()
+  const { loginState } = useActions()
+  const [checkAuthFunc, {isLoading, error,data}] = useAuthUserMutation()
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: ''
+      email: 'tes1124122@test.ru',
+      password: '123456'
     },
     onSubmit:
-    // async (event) => {
-    //
-    //   await login({
-    //     email: event.email,
-    //     password: event.password
-    //   });
-    //
-    //   if (error) {
-    //     alert(error)
-    //   } else {
-    //     alert('Вы успешно авторизованы')
-    //   }
-    // }
-      async (values) => alert(JSON.stringify(values, null, 2)),
+      async (values) => {
+        await checkAuthFunc(values)
+        if (error) {
+          console.log(error)
+        }
+        if (data){
+          const {token} = data
+          localStorage.setItem("token", token);
+          loginState(data);
+
+        }
+      },
     validate: (values): object => {
       const errors: IErrors = {
         email: '',
@@ -40,7 +41,6 @@ function SingIn() {
 
       if (!values.email) {
         errors.email = 'Поле "e-mail" обязательно';
-        console.log(errors.email)
       } else if (
         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
       ) {
@@ -54,10 +54,16 @@ function SingIn() {
       } else {
         return errors;
       }
-      // return errors;
     }
   });
 
+  if (localStorage.getItem('token')){
+    return <Navigate to={'/posts'}/>
+  }
+
+  if (error){
+    console.log(error)
+  }
   return (
     isLoading ? <Loading/> :
       <form className={styles.sing_in_form} onSubmit={formik.handleSubmit}>

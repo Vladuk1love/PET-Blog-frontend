@@ -1,0 +1,99 @@
+.post_container {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 900px;
+    max-height: 410px;
+    gap: 40px;
+    -webkit-user-select: none;
+    transition: all 0.3s ease-in-out ;
+    position: relative;
+    border-radius: 40px;
+}
+
+.post_container:hover{
+    scale: 1.01;
+}
+
+.post_left_side {
+    width: 360px;
+    text-align: left;
+    padding: 15px;
+    box-sizing: border-box;
+    hyphens: auto;
+}
+
+.post_left_side_title {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.post_left_side_author_name {
+    font-size: 24px;
+    font-weight: 400;
+    height: 25px;
+    margin-top: 30px;
+}
+
+.post_left_side_tags {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.post_left_side_tag  {
+    color: #2457F0;
+    padding: 7px 17px 9px 17px;
+    line-height: 15px;
+    /*padding: 10px;*/
+    display: flex;
+    align-items: center;
+    border: 1px solid #2457F0;
+    border-radius: 35px;
+}
+
+
+.post_right_side {
+    width: 490px;
+    gap: 20px;
+    position: relative;
+    border-radius: 50px;
+}
+
+.post_right_side_img {
+    width: 490px;
+    height: 250px;
+    padding: 5px;
+    border-radius: 50px 50px 0 0;
+    box-sizing: border-box;
+}
+
+.post_right_footer {
+    background-color: #EFEFEF;
+    height: 160px;
+    bottom: 0;
+    width: 490px;
+    position: relative;
+    border-radius: 0 0 50px 50px;
+    padding: 15px 30px 35px;
+    box-sizing: border-box;
+}
+
+.post_right_side_text {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.post_right_side_button {
+    font: 300 13px "Unbounded", sans-serif;
+    padding: 7px 20px 7px 20px;
+    border-radius: 35px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+}

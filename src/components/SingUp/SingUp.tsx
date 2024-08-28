@@ -1,6 +1,9 @@
 import { useFormik } from "formik";
 import styles from './SingUp.module.css'
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useActions } from "../../hooks/useActions";
+import { useRegisterUserMutation } from "../../redux/user/userApi";
+import Loading from "../Loading/Loading";
 
 
 interface IErrors {
@@ -12,6 +15,8 @@ interface IErrors {
 }
 
 function SingUp() {
+  const {loginState} = useActions()
+  const [registerFunc, {data, isLoading, error}] = useRegisterUserMutation()
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -20,8 +25,23 @@ function SingUp() {
       confirmPassword: '',
       checkbox: false
     },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values) => {
+      const {name, email, password} = values
+      await registerFunc(
+        {
+          fullName: name,
+          email: email,
+          password: password
+        }
+      )
+      if (error) {
+        console.log(error)
+      }
+      if (data) {
+        const {token} = data
+        localStorage.setItem("token", token);
+        loginState(data);
+      }
     },
     validate: (values) => {
       const errors: IErrors = {
@@ -62,8 +82,12 @@ function SingUp() {
     }
   });
 
+  if (localStorage.getItem('token')) {
+    return <Navigate to={'/posts'}/>
+  }
 
   return (
+    isLoading ? <Loading/> :
     <form className={styles.sing_up_form} onSubmit={formik.handleSubmit}>
       <p className={styles.form_title}>регистрация</p>
       <input
@@ -112,7 +136,7 @@ function SingUp() {
         согласие на обработку персональных данных
       </label>
 
-      <button type="submit" className={styles.sing_up_form_button}>войти</button>
+      <button type="submit" className={styles.sing_up_form_button}>зарегистрироваться</button>
       <Link to={"/login"}><p>уже зарегистрирован</p></Link>
     </form>
   );
