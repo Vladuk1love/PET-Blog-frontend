@@ -13,6 +13,7 @@ export interface IUserLogin{
 }
 
 export interface IPosts {
+  _id: string,
   title: string,
   text:  string,
   tags: any[],

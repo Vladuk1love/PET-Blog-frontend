@@ -4,6 +4,7 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { Link } from "react-router-dom";
 
 interface IPost {
+  _id: string,
   title: string,
   authorName: string,
   tags: string[],
@@ -14,6 +15,7 @@ interface IPost {
 
 export function PostMini(props: IPost) {
   const isAuth = useTypedSelector((state) => (state.user.isAuthenticated))
+  
   return (
     <div className={styles.post_container} style={props.scale === 1? {}: {scale:`${props.scale}`,marginBottom:"-50px"}}>
       <div className={styles.post_left_side}>
@@ -32,7 +34,7 @@ export function PostMini(props: IPost) {
         <div className={styles.post_right_footer}>
           <p className={styles.post_right_side_text}>{props.text.slice(0,150)}...</p>
           {isAuth ?
-            <Link to={'/'}>
+            <Link to={`/post/${props._id}`}>
               <button className={styles.post_right_side_button}>Читать полностью</button>
             </Link>
              :

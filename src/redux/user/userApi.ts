@@ -19,7 +19,10 @@ export const userApi = createApi({
         },
       }),
     }),
-    registerUser: build.mutation<IUser,Pick<IUser, "fullName" | "email" | "password">>({
+    registerUser: build.mutation<
+      IUser,
+      Pick<IUser, "fullName" | "email" | "password">
+    >({
       query: (data) => ({
         url: "auth/register",
         method: "POST",
@@ -32,7 +35,7 @@ export const userApi = createApi({
     authMe: build.query<IUser, any>({
       query: () => "auth/me",
     }),
-    updateMe: build.mutation<IUser, Pick<IUser, 'avatarUrl'>>({
+    updateMe: build.mutation<IUser, Pick<IUser, "avatarUrl">>({
       query: (data) => ({
         url: "user/update",
         method: "PATCH",
@@ -42,10 +45,14 @@ export const userApi = createApi({
         },
       }),
     }),
+    getOne: build.query<IUser, string>({
+      query: (id) => `user?id=${id}`,
+    }),
   }),
 });
 
 export const { useAuthUserMutation } = userApi;
 export const { useAuthMeQuery } = userApi;
 export const { useRegisterUserMutation } = userApi;
-export const { useUpdateMeMutation } = userApi
+export const { useUpdateMeMutation } = userApi;
+export const { useGetOneQuery } = userApi;  

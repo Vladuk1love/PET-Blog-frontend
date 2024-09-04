@@ -35,6 +35,7 @@ function PopularPosts() {
                   {data.map((item, index) => {
                     return (
                       <PostMini
+                        _id={item._id}
                         title={item.title}
                         authorName={item.user.fullName}
                         tags={item.tags}

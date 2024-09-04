@@ -10,6 +10,7 @@ import Profile from "../Profile/Profile";
 import HomePage from "../HomePage/HomePage";
 import { useActions } from "../../hooks/useActions";
 import { useAuthMeQuery } from "../../redux/user/userApi";
+import Post from '../Post/Post';
 
 function App() {
   const { loginState, logoutState } =  useActions()
@@ -33,7 +34,7 @@ function App() {
       <Routes>
         <Route path={'/'} element = {<HomePage/>}/>
         <Route path={'/posts'} element = {<MainPosts/>}/>
-        {/*<Route path={'/post/:id'} element = {<Post/>}/>*/}
+        <Route path={'/post/:id'} element = {<Post />}/>
         <Route path={'/post/add'} element = {<PostAdd/>}/>
         <Route path={'/login'} element = {<SingIn/>}/>
         <Route path={'/register'} element = {<SingUp/>}/>

@@ -72,6 +72,7 @@ function Profile() {
               data.map((post) => {
                 return (
                   <PostMini
+                    _id={post._id}
                     title={post.title}
                     authorName={"Это ваша статья"}
                     tags={post.tags}

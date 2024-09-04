@@ -30,7 +30,7 @@ function PostAdd() {
       if (values.title.length < 3) {
         errors.title = 'минимальная длина - 3 символа';
       }
-      if (setImageError.length > 0) {
+      if (values.imageUrl.length > 0 && setImageError.length > 0) {
         errors.imageUrl = imageError
       }
       if (!values.text) {

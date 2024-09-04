@@ -12,6 +12,9 @@ export const postsApi = createApi({
     getPosts: build.query<IPosts[], number>({
       query: (page) => `posts?page=${page}`,
     }),
+    getPost: build.query<IPosts, string>({
+      query: (id) => `posts/certain?id=${id}`,
+    }),
     getPostsCount: build.query<number, string>({
       query: (authorId) =>
         authorId ? `posts/count?authorId=${authorId}` : `posts/count`,
@@ -22,7 +25,7 @@ export const postsApi = createApi({
     getByAuthor: build.query<IPosts[], IAuthorsPosts>({
       query: ({ authorId, page }) => `posts/author/${authorId}?page=${page}`,
     }),
-    createPost: build.mutation<string, Omit<IPosts, 'viewsCount'|'user'>>({
+    createPost: build.mutation<string, Omit<IPosts, '_id' | 'viewsCount'|'user'>>({
       query: (data) => ({
         url: "/posts/certain",
         method: "POST",
@@ -37,3 +40,4 @@ export const { useGetPopularPostsQuery } = postsApi;
 export const { useGetPostsCountQuery } = postsApi;
 export const { useGetByAuthorQuery } = postsApi;
 export const { useCreatePostMutation } = postsApi;
+export const { useGetPostQuery } = postsApi;

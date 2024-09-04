@@ -12,6 +12,7 @@ function PostsFeed(props: IPostsFeedProps) {
       {props.posts.map((item, index) => (
         <PostMini
           key={index}
+          _id={item._id}
           title={item.title}
           authorName={item.user.fullName}
           tags={item.tags}
